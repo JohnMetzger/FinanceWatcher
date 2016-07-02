@@ -1,6 +1,6 @@
 package control.account
 
-import control.AccountBalanceManager
+import manager.accountbalance.AccountBalanceManager
 import model.account.Account
 
 class AccountControl {

@@ -1,6 +1,6 @@
 package model.account
 
-import control.AccountBalanceManager
+import manager.accountbalance.AccountBalanceManager
 
 case class Account(name: String, describtion: String) {
 

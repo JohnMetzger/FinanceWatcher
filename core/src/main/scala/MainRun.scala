@@ -2,7 +2,7 @@ package main.scala
 
 import java.util.Calendar
 
-import control.AccountBalanceManager
+import manager.accountbalance.AccountBalanceManager
 import model.account.Account
 import model.accountbalance.AccountBalance
 

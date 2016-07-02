@@ -1,4 +1,3 @@
-package main.scala
 
 import java.util.Calendar
 
@@ -12,8 +11,8 @@ object MainRun {
         val accbal1 = AccountBalance(500, "MyAccount", Calendar.getInstance())
         val accbal2 = AccountBalance(1000, "NyOtherAccount", Calendar.getInstance())
 
-        val acc1 = Account("MyAccount", "Just for testing", accbal1)
-        val acc2 = Account("NyOtherAccount", "Just for testing", accbal2)
+        val acc1 = Account("MyAccount", "Just for testing")
+        val acc2 = Account("NyOtherAccount", "Just for testing")
 
         println("----------------------------------------------------------------------------")
         val accbalman: AccountBalanceManager = new AccountBalanceManager(acc1)

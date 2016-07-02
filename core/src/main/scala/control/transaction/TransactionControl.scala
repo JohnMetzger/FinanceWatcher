@@ -2,7 +2,7 @@ package control.transaction
 
 class TransactionControl {
 
-  def createTransaction(): Unit = {
+  def makeTransaction(): Unit = {
 
   }
 

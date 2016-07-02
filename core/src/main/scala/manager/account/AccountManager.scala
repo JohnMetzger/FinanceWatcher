@@ -12,12 +12,11 @@ class AccountManager() {
 
   def createAccount(name: String, describtion: String): Unit = {
     val account = Account(name, describtion)
-    this.accounts = account :: this.accounts
+    accounts = account :: accounts
   }
 }
 
 object AccountManager {
-
 
   def getTestAccounts: List[Account] = {
     //for use without database

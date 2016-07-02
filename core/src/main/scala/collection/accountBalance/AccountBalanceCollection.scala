@@ -13,6 +13,10 @@ class AccountBalanceCollection(account: Account) {
   //println("Welt Hallo")
   val balances: List[AccountBalance] = AccountBalanceCollection.getSomeAccountBalances(account)
 
+
+  def addAccountBalance(accountBalance: AccountBalance): Unit = {
+
+  }
   //for (b <- balances) println(b)
 }
 

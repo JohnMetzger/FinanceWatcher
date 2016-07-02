@@ -9,23 +9,17 @@ import scala.collection.mutable
 
 class AccountBalanceCollection(account: Account) {
 
-  val this.account: Account = account
-  //println("Welt Hallo")
+  //val this.account: Account = account
   var balances: List[AccountBalance] = AccountBalanceCollection.getSomeAccountBalances(account)
 
   def addAccountBalance(accountBalance: AccountBalance): Unit = {
-    balances :: accountBalance
+    balances = accountBalance :: balances
   }
-  //for (b <- balances) println(b)
 }
 
 object AccountBalanceCollection {
 
   def getSomeAccountBalances(account: Account): List[AccountBalance] = {
-    /**
-      * Dient der Daten-Generierung ohne Datenbank
-      */
-    //println(s"Load data to %s - Account".format(account.name))
 
     val balanceList: mutable.ListBuffer[AccountBalance] = mutable.ListBuffer()
 

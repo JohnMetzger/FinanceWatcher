@@ -1,9 +1,8 @@
 package model.account
 
 import control.AccountBalanceManager
-import model.accountbalance.AccountBalance
 
-case class Account(name: String, describtion: String, currentBalance: AccountBalance) {
+case class Account(name: String, describtion: String) {
 
 
   val balanceManager = new AccountBalanceManager(this)

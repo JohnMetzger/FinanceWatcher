@@ -1,35 +1,24 @@
 package control
 
-import java.util.Calendar
-
+import collection.accountBalance.AccountBalanceCollection
 import model.account.Account
 import model.accountbalance.AccountBalance
 
-import scala.collection.mutable
-
 class AccountBalanceManager(account: Account) {
 
-  println("Welt Hallo")
-  val balances = AccountBalanceManager.getSomeAccountBalances()
+  var currentBalance: AccountBalance
 
-  for (b <- balances) println(b)
-}
+  var balanceCollection: AccountBalanceCollection
 
+  def getBalanceCollection() = {
+    balanceCollection = AccountBalanceCollection(account)
+  }
 
-object AccountBalanceManager {
+  def addNewAccountBalance(accountBalance: AccountBalance): Unit = {
+    if (currentBlance.date < accountBalance.date) {
 
-  def getSomeAccountBalances(): List[AccountBalance] = {
-
-    println("Hallo Welt")
-
-    val xs = (1 to 5).toList
-    val balanceList: mutable.ListBuffer[AccountBalance] = mutable.ListBuffer()
-
-    for (x <- xs) {
-      balanceList += AccountBalance(x * 145.67, "MyAccount", Calendar.getInstance())
     }
-
-    balanceList.toList
-
   }
 }
+
+

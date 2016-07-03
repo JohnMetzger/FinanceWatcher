@@ -10,7 +10,7 @@ import scala.collection.mutable
 class AccountBalanceCollection(account: Account) {
 
   //val this.account: Account = account
-  var balances: List[AccountBalance] = AccountBalanceCollection.getSomeAccountBalances(account)
+  var balances: List[AccountBalance] = AccountBalanceCollection.generateSomeAccountBalances(account)
 
   def addAccountBalance(accountBalance: AccountBalance): Unit = {
     balances = accountBalance :: balances
@@ -19,7 +19,7 @@ class AccountBalanceCollection(account: Account) {
 
 object AccountBalanceCollection {
 
-  def getSomeAccountBalances(account: Account): List[AccountBalance] = {
+  def generateSomeAccountBalances(account: Account): List[AccountBalance] = {
 
     val balanceList: mutable.ListBuffer[AccountBalance] = mutable.ListBuffer()
 

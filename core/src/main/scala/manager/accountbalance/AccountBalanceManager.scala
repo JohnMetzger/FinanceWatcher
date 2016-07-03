@@ -8,15 +8,20 @@ import model.accountbalance.AccountBalance
 
 class AccountBalanceManager(account: Account) {
 
-  val this.account = account
-  var currentBalance: AccountBalance = getCurrentBalance
+  var currentBalance: AccountBalance = initCurrentBalance
 
-  var balanceCollection: AccountBalanceCollection = getBalanceCollection
+  var balanceCollection: AccountBalanceCollection = initBalanceCollection
 
-  def getBalanceCollection: AccountBalanceCollection = {
+  def initBalanceCollection: AccountBalanceCollection = {
     val balanceCollection = new AccountBalanceCollection(account)
     balanceCollection
   }
+
+  def initCurrentBalance: AccountBalance = {
+    /* Use FakeData */
+    AccountBalance(500, account.name, Calendar.getInstance())
+  }
+
 
   def addNewAccountBalance(accountBalance: AccountBalance): Unit = {
     if (currentBalance.date.before(accountBalance.date)) {
@@ -26,11 +31,6 @@ class AccountBalanceManager(account: Account) {
     }
   }
 
-  def getCurrentBalance: AccountBalance = {
-    // Just Fake
-
-    AccountBalance(500, account.name, Calendar.getInstance())
-  }
 
 }
 

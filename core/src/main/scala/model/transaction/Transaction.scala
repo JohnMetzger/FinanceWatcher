@@ -4,6 +4,6 @@ import java.util.Calendar
 
 import model.account.Account
 
-case class Transaction(amount: Int, benefitedAccount: Account, debitedAccount: Account, affectDate: Calendar, creationDate: Calendar) {
+case class Transaction(amount: Double, benefitedAccount: Account, debitedAccount: Account, affectDate: Calendar, creationDate: Calendar) {
 
 }

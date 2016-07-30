@@ -1,4 +1,4 @@
-import manager.account.AccountManager
+import manager.account.AccountMasterManager
 
 object MainRun {
 
@@ -14,11 +14,29 @@ object MainRun {
       */
 
 
-      val accountManager: AccountManager = new AccountManager()
+        //val accountManager: AccountManager = new AccountManager()
 
-      accountManager.createAccount("Newaccount", "Just a Test")
+        //accountManager.createAccount("Newaccount", "Just a Test")
 
-      println(accountManager.accounts)
+        //println(accountManager.accounts)
+
+
+        //println(MainControl.mainManager.testString)
+
+        //MainControl.mainManager.changeTestString()
+
+        //println(MainControl.mainManager.testString)
+
+        val accountManager = new AccountMasterManager()
+
+        val account1 = accountManager.get(1)
+        val account2 = accountManager.get(2)
+        val account3 = accountManager.get(1)
+
+        println(account1)
+        println(account2)
+        println(account3)
+
     }
 
 

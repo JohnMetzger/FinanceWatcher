@@ -24,7 +24,7 @@ object AccountBalanceCollection {
     val balanceList: mutable.ListBuffer[AccountBalance] = mutable.ListBuffer()
 
     for (x <- (1 to 5).toList) {
-      balanceList += AccountBalance(x * 145.67, "MyAccount", Calendar.getInstance())
+      balanceList += AccountBalance(1, x * 145.67, "MyAccount", Calendar.getInstance())
     }
 
     balanceList.toList

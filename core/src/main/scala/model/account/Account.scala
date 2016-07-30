@@ -2,7 +2,7 @@ package model.account
 
 import manager.accountbalance.AccountBalanceManager
 
-case class Account(name: String, describtion: String) {
+case class Account(id: Int, name: String, describtion: String) {
 
 
   val balanceManager = new AccountBalanceManager(this)

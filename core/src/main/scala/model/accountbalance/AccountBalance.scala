@@ -2,7 +2,7 @@ package model.accountbalance
 
 import java.util.Calendar
 
-case class AccountBalance(balance: Double, accountName: String, date: Calendar) {
+case class AccountBalance(id: Int, balance: Double, accountName: String, date: Calendar) {
 
   val day = date.get(Calendar.DAY_OF_MONTH)
   val month = date.get(Calendar.MONTH) + 1

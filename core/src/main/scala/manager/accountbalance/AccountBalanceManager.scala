@@ -19,7 +19,7 @@ class AccountBalanceManager(account: Account) {
 
   def initCurrentBalance: AccountBalance = {
     /* Use FakeData */
-    AccountBalance(500, account.name, Calendar.getInstance())
+    AccountBalance(1, 500, account.name, Calendar.getInstance())
   }
 
 

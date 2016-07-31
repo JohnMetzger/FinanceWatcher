@@ -1,4 +1,4 @@
-import manager.account.AccountMasterManager
+import control.account.AccountControl
 
 object MainRun {
 
@@ -27,7 +27,7 @@ object MainRun {
 
         //println(MainControl.mainManager.testString)
 
-        val accountManager = new AccountMasterManager()
+        /*val accountManager = new AccountMasterManager()
 
         val account1 = accountManager.get(1)
         val account2 = accountManager.get(2)
@@ -35,7 +35,10 @@ object MainRun {
 
         println(account1)
         println(account2)
-        println(account3)
+        println(account3)*/
+
+        AccountControl.createAccount("TestAccount1", "Just for test")
+        AccountControl.createAccount("TestAccount2", "Just for test")
 
     }
 

@@ -16,4 +16,11 @@ object AccountPersistence {
     //TODO Prüfung schreiben
     true
   }
+
+  def addNewAccount(name: String, description: String): Account = {
+
+    val account = Account(1, name, description)
+    println("Saved: " + account)
+    account
+  }
 }

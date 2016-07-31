@@ -32,6 +32,12 @@ class AccountMasterManager {
   private def addAccount(account: Account): Unit = {
     accounts += (account.id -> AccountEntity(account, 0))
   }
+
+  def addNewAccount(name: String, description: String): Unit = {
+    AccountPersistence.addNewAccount(account)
+
+    addAccount(account)
+  }
 }
 
 case class AccountEntity(account: Account, stamp: Integer)

@@ -1,4 +1,4 @@
-import control.account.AccountControl
+import persistence.dbConnection.account.AccountPersistence
 
 object MainRun {
 
@@ -35,11 +35,14 @@ object MainRun {
 
         println(account1)
         println(account2)
-        println(account3)*/
+        println(account3)
 
         AccountControl.createAccount("TestAccount1", "Just for test")
-        AccountControl.createAccount("TestAccount2", "Just for test")
+        AccountControl.createAccount("TestAccount2", "Just for test")*/
 
+        //AccountPersistence.addNewAccount("testAccount", "Just for Test")
+
+        AccountPersistence.get("57b17d0c330a4320fc3becff")
     }
 
 

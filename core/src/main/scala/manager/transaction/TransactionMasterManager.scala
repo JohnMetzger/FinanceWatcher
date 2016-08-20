@@ -1,7 +1,7 @@
 package manager.transaction
 
 import model.transaction.Transaction
-import persistence.transaction.TransactionPersistence
+import persistence.dbConnection.transaction.TransactionPersistence
 
 import scala.collection.mutable
 

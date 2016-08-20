@@ -1,4 +1,4 @@
-package persistence.accountBalance
+package persistence.dbConnection.accountBalance
 
 import java.util.Calendar
 

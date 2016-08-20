@@ -11,7 +11,7 @@ class AccountUserManager() {
   println(accounts)
 
   def createAccount(name: String, describtion: String): Unit = {
-    val account = Account(1, name, describtion)
+    val account = Account("1", name, describtion)
     accounts = account :: accounts
   }
 }
@@ -24,7 +24,7 @@ object AccountUserManager {
     val accountList: mutable.ListBuffer[Account] = mutable.ListBuffer()
 
     for (x <- (1 to 5).toList) {
-      accountList += Account(x, "Account%d".format(x), "Simple Account")
+      accountList += Account(x.toString, "Account%d".format(x), "Simple Account")
     }
 
     accountList.toList

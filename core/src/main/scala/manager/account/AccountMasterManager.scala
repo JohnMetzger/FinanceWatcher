@@ -1,15 +1,15 @@
 package manager.account
 
 import model.account.Account
-import persistence.account.AccountPersistence
+import persistence.dbConnection.account.AccountPersistence
 
 import scala.collection.mutable
 
 class AccountMasterManager {
 
-  var accounts: mutable.Map[Int, AccountEntity] = new mutable.HashMap[Int, AccountEntity]
+  var accounts: mutable.Map[String, AccountEntity] = new mutable.HashMap[String, AccountEntity]
 
-  def get(accountID: Int): Account = {
+  def get(accountID: String): Account = {
     if (accounts contains accountID) {
       val accEntity: AccountEntity = accounts(accountID)
 
@@ -23,7 +23,7 @@ class AccountMasterManager {
     }
   }
 
-  private def updateAccount(accountID: Int): Account = {
+  private def updateAccount(accountID: String): Account = {
     val account = AccountPersistence.get(accountID)
     this.addAccount(account)
     account
@@ -34,9 +34,9 @@ class AccountMasterManager {
   }
 
   def addNewAccount(name: String, description: String): Unit = {
-    AccountPersistence.addNewAccount(account)
+    AccountPersistence.addNewAccount(name, description)
 
-    addAccount(account)
+    //this.addAccount(account)
   }
 }
 

@@ -6,11 +6,11 @@ import model.transaction.Transaction
 
 object TransactionPersistence {
 
-  def get(id: Int): Transaction = {
-    Transaction(1, 500, "A", "B", Calendar.getInstance(), Calendar.getInstance())
+  def get(id: String): Transaction = {
+    Transaction("1", 500, "A", "B", Calendar.getInstance(), Calendar.getInstance())
   }
 
-  def isValid(id: Int, stemp: Integer): Boolean = {
+  def isValid(id: String, stemp: Integer): Boolean = {
     //TODO Prüfung schreiben
     true
   }

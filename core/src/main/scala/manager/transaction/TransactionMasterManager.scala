@@ -6,9 +6,9 @@ import persistence.dbConnection.transaction.TransactionPersistence
 import scala.collection.mutable
 
 class TransactionMasterManager {
-  var transactions: mutable.Map[Int, TransactionEntity] = new mutable.HashMap[Int, TransactionEntity]
+  var transactions: mutable.Map[String, TransactionEntity] = new mutable.HashMap[String, TransactionEntity]
 
-  def get(transactionID: Int): Transaction = {
+  def get(transactionID: String): Transaction = {
     if (transactions contains transactionID) {
       val transEntity: TransactionEntity = transactions(transactionID)
 
@@ -22,7 +22,7 @@ class TransactionMasterManager {
     }
   }
 
-  private def updateTransaction(transactionID: Int): Transaction = {
+  private def updateTransaction(transactionID: String): Transaction = {
     val transaction = TransactionPersistence.get(transactionID)
     this.addTransaction(transaction)
     transaction

@@ -18,6 +18,8 @@ object AccountControl {
   }
 
   def createAccount(name: String, description: String) = {
+
+
     MainControl.accountManager.addNewAccount(name, description)
 
   }

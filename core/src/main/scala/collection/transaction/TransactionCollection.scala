@@ -23,7 +23,7 @@ object TransactionCollection {
     val secondAccount: Account = Account("1", "secondAccount", "Just to Test some shit")
 
     for (x <- (1 to 5).toList) {
-      transactionList += Transaction(x, x * 145.67, account.name, secondAccount.name, Calendar.getInstance(), Calendar.getInstance())
+      transactionList += Transaction(x.toString, x * 145.67, account.name, secondAccount.name, Calendar.getInstance(), Calendar.getInstance())
     }
 
     transactionList.toList

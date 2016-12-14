@@ -1,15 +1,22 @@
 package persistence.dbConnection
 
+import com.mongodb.{BasicDBObject, DBObject}
 import com.mongodb.casbah.commons.MongoDBObject
+import main.scala.persistence.parser.DocumentParser
 import model.entity.Entity
+import org.bson.Document
+import org.bson.types.ObjectId
 import persistence.MainPersistence
+import play.api.libs.json.Json
+import play.api.libs.json._
 
-class EntityPersistence[E <: Entity](collectionName: String) {
+
+class EntityPersistence[E <: Entity](collectionName: String)
+                                    (implicit manifest: Manifest[E]){
 
   val dbColl = MainPersistence.getDBClient()(collectionName)
-  //abstract def get(id: String)
 
-  def add(entityValues: Map[String, Object]): Unit = {
+  def add(entityValues: Map[String, Any]): Unit = {
 
     val builder = MongoDBObject.newBuilder
     for (entityValue <- entityValues) {
@@ -17,24 +24,25 @@ class EntityPersistence[E <: Entity](collectionName: String) {
     }
 
     val entityObject = builder.result()
-
-    println(entityObject)
-
     dbColl.insert(entityObject)
-
     val foundEntityObject = dbColl.findOne(entityObject)
-
-    createEntity(foundEntityObject)
-
+    println("add get class: " + foundEntityObject)
+    //createEntity(foundEntityObject)
   }
 
-  private def createEntity(dbObject: Option[dbColl.T]): Unit = {
-    val opt = dbObject.get.toMap
+  def get(id: String): E = {
+    val dbObject = dbColl.findOneByID(new ObjectId(id)).get
+    createEntity(dbObject, id = id)
+  }
 
+  private def setupId(dbObject: DBObject, id: String) : JsValue = {
+    val jsonObject = Json.parse(dbObject.toString)
+    val id = (jsonObject \ "_id" \ "$oid").get.toString().replace("\"", "")
+    jsonObject.as[JsObject] - "_id" ++ JsObject(Seq(("id", JsString(id))))
+  }
 
-    //println(implicitly[ClassTag[E]])
-
-    //EntityFactory.createEntity(classOf[E], opt)
+  private def createEntity(dbObject: DBObject, id: String): E = {
+    DocumentParser.read[E](setupId(dbObject, id))
   }
 
   def isValid(id: String, stemp: Integer): Boolean = {

@@ -2,7 +2,7 @@ package persistence.dbConnection.transaction
 
 import java.util.Calendar
 
-import model.transaction.Transaction
+import model.entity.transaction.Transaction
 
 object TransactionPersistence {
 

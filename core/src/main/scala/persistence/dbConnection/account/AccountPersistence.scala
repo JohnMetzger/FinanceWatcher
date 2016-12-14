@@ -1,7 +1,7 @@
 package persistence.dbConnection.account
 
 import com.mongodb.casbah.commons.MongoDBObject
-import model.account.Account
+import model.entity.account.Account
 import org.bson.types.ObjectId
 import persistence.MainPersistence
 
@@ -15,7 +15,7 @@ object AccountPersistence {
     createAccount(accountObject)
   }
 
-  def isValid(id: String, stemp: Integer): Boolean = {
+  def isValid(id: String, stemp: Int): Boolean = {
     //TODO Prüfung schreiben
     true
   }

@@ -1,13 +1,9 @@
 package persistence
 
 import com.mongodb.casbah.MongoClient
-import model.account.Account
-import model.transaction.Transaction
+import model.entity.account.Account
+import model.entity.transaction.Transaction
 import persistence.dbConnection.EntityPersistence
-
-class MainPersistence {
-
-}
 
 object MainPersistence {
 

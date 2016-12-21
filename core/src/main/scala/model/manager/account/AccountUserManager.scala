@@ -1,6 +1,6 @@
-package manager.account
+package model.manager.account
 
-import model.account.Account
+import model.entity.account.Account
 
 import scala.collection.mutable
 

@@ -1,17 +1,15 @@
-package collection.transaction
+package model.collection.transaction
 
 import java.util.Calendar
 
-import model.account.Account
-import model.transaction.Transaction
+import model.entity.account.Account
+import model.entity.transaction.Transaction
 
 import scala.collection.mutable
 
 
 class TransactionCollection(account: Account) {
-
   var transactons: List[Transaction] = TransactionCollection.generateSomeTransactions(account)
-
 
 }
 

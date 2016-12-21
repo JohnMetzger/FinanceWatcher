@@ -1,6 +1,9 @@
 package model.entity
 
-abstract class Entity {
+import play.api.libs.json.{JsPath, Reads}
+import play.api.libs.functional.syntax._
+
+trait Entity {
 
   val id: String
 
@@ -9,11 +12,5 @@ abstract class Entity {
     }*/
 }
 
-object Entity {
-
-  def getEntityType: String = {
-    "entity"
-  }
 
 
-}

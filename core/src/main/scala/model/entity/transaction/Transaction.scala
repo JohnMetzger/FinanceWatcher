@@ -1,4 +1,4 @@
-package model.transaction
+package model.entity.transaction
 
 import java.util.Calendar
 
@@ -12,11 +12,4 @@ case class Transaction(id: String,
                        creationDate: Calendar) extends Entity {
 
   println("ID: " + id + "\nBetrag: " + amount + " \nBeguenstigtesKonto: " + benefitedAccount + "\nBetroffenesKonto: " + debitedAccount + "\nGueltigesDatum: " + affectDate + "\nErzeugungsDatum: " + creationDate)
-
-}
-
-object Transaction {
-  def getEntityType: String = {
-    "transaction"
-  }
 }

@@ -1,8 +1,8 @@
-package manager.transaction
+package model.manager.transaction
 
 import java.util.Calendar
 
-import model.account.Account
+import model.entity.account.Account
 
 class TransactionManager(account: Account) {
   // maybe a List of accounts

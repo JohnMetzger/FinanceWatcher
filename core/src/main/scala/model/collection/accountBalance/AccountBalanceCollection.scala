@@ -1,18 +1,18 @@
-package collection.accountBalance
+package model.collection.accountBalance
 
 import java.util.Calendar
 
-import model.account.Account
-import model.accountbalance.AccountBalance
+import model.entity.account.Account
+import model.entity.accountbalance.AccountBalance
+import org.joda.time.DateTime
 
 import scala.collection.mutable
 
 class AccountBalanceCollection(account: Account) {
 
-  //val this.account: Account = account
   var balances: List[AccountBalance] = AccountBalanceCollection.generateSomeAccountBalances(account)
 
-  def addAccountBalance(accountBalance: AccountBalance): Unit = {
+  def add(accountBalance: AccountBalance): Unit = {
     balances = accountBalance :: balances
   }
 }
@@ -20,14 +20,11 @@ class AccountBalanceCollection(account: Account) {
 object AccountBalanceCollection {
 
   def generateSomeAccountBalances(account: Account): List[AccountBalance] = {
-
     val balanceList: mutable.ListBuffer[AccountBalance] = mutable.ListBuffer()
 
     for (x <- (1 to 5).toList) {
-      balanceList += AccountBalance(1, x * 145.67, "MyAccount", Calendar.getInstance())
+      balanceList += AccountBalance("1", x * 145.67, "MyAccount", new DateTime())
     }
-
     balanceList.toList
-
   }
 }

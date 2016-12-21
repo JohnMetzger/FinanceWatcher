@@ -10,7 +10,7 @@ object MainPersistence {
 
   private val dbClient = MongoClient("localhost", 27017)
 
-  def getDBClient() = {
+  def getDBClient = {
     dbClient("financeWatcher")
   }
 

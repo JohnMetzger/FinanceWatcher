@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core.iml" filepath="$PROJECT_DIR$/.idea/modules/core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core-build.iml" filepath="$PROJECT_DIR$/.idea/modules/core-build.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/financewatcher.iml" filepath="$PROJECT_DIR$/.idea/modules/financewatcher.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/financewatcher-build.iml" filepath="$PROJECT_DIR$/.idea/modules/financewatcher-build.iml" />
     </modules>

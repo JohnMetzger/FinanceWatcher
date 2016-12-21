@@ -8,11 +8,25 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/core/project" />
             <option value="$PROJECT_DIR$/project" />
           </set>
         </option>
         <option name="resolveSbtClassifiers" value="true" />
         <option name="sbtVersion" value="0.13.8" />
+        <option name="useAutoImport" value="true" />
+        <option name="useOurOwnAutoImport" value="true" />
+      </SbtProjectSettings>
+      <SbtProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/.idea/modules" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/.idea/modules" />
+            <option value="$PROJECT_DIR$/.idea/modules/project" />
+          </set>
+        </option>
+        <option name="sbtVersion" value="0.13.5" />
         <option name="useAutoImport" value="true" />
         <option name="useOurOwnAutoImport" value="true" />
       </SbtProjectSettings>

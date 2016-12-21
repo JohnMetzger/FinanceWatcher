@@ -2,6 +2,7 @@ package persistence
 
 import com.mongodb.casbah.MongoClient
 import model.entity.account.Account
+import model.entity.accountbalance.AccountBalance
 import model.entity.transaction.Transaction
 import persistence.dbConnection.EntityPersistence
 
@@ -15,5 +16,6 @@ object MainPersistence {
 
   val accountPersistence = new EntityPersistence[Account]("account")
   val transactionPersistence = new EntityPersistence[Transaction]("transaction")
+  val accountBalancePersistence = new EntityPersistence[AccountBalance]("accountBalancePersistence")
 
 }

@@ -1,10 +1,9 @@
 package persistence.dbConnection
 
-import com.mongodb.{BasicDBObject, DBObject}
+import com.mongodb.DBObject
 import com.mongodb.casbah.commons.MongoDBObject
 import main.scala.persistence.parser.DocumentParser
 import model.entity.Entity
-import org.bson.Document
 import org.bson.types.ObjectId
 import persistence.MainPersistence
 import play.api.libs.json.Json
@@ -25,8 +24,7 @@ class EntityPersistence[E <: Entity](collectionName: String)
 
     val entityObject = builder.result()
     dbColl.insert(entityObject)
-    val foundEntityObject = dbColl.findOne(entityObject)
-    println("add get class: " + foundEntityObject)
+    //val foundEntityObject = dbColl.findOne(entityObject)
     //createEntity(foundEntityObject)
   }
 
@@ -44,11 +42,4 @@ class EntityPersistence[E <: Entity](collectionName: String)
   private def createEntity(dbObject: DBObject, id: String): E = {
     DocumentParser.read[E](setupId(dbObject, id))
   }
-
-  def isValid(id: String, stemp: Integer): Boolean = {
-    // TODO Implementierung sobald Network-Rapper existieren
-    true
-  }
-
-
 }

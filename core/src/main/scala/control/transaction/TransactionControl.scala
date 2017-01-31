@@ -2,7 +2,7 @@ package control.transaction
 
 import java.util.Calendar
 
-import model.account.Account
+import model.entity.account.Account
 
 class TransactionControl {
 
